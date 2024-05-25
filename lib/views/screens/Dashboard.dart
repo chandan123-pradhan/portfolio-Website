@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/color_constant.dart';
+import 'package:my_portfolio/views/widgets/education_card.dart';
 import 'package:my_portfolio/views/widgets/skill_widget.dart';
 
 class DashboardWidget extends StatefulWidget {
@@ -374,28 +375,265 @@ const Text(
 
 "𝔸𝕓𝕠𝕦𝕥 𝕄𝕖",
             style: TextStyle(
-              color: ColorConstant.yellowColor,fontSize: 70,
+              color: ColorConstant.yellowColor,fontSize: 50,
               fontWeight: FontWeight.bold
             ),
 
 ),
 
-
-Row(
-  children: [
-    Container(
-      height: 80,
-      width: 80,
+  SizedBox(height: 40,),
+Padding(
+  padding:  EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20,),
+  child:   Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      // SizedBox(width: 80,),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+  Row(
+    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      //SizedBox(width: MediaQuery.of(context).size.width/20,),
+              Container(
+        height: 60,
+        width: 60,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(width: 1,color: ColorConstant.yellowColor),
+          image: const DecorationImage(image: AssetImage('assets/user_about.JPG'))
+        ),
+      ),
+       SizedBox(width: 40,),
+      const Text(
+  
+  "Ꭵ ᏝᎧᏉᏋ",
+              style: TextStyle(
+                color: ColorConstant.yellowColor,fontSize: 25,
+                fontWeight: FontWeight.bold
+              ),
+  
+  ),
+    ],
+  )
+     , SizedBox(height: 30,) 
+     , Row(
+        children: [
+         // SizedBox(width: MediaQuery.of(context).size.width/20,),
+  SkillWidget(skillName: 'Listeing Music',
+                            image: 'assets/headphones.png',
+                            )
+                            ,
+                             SizedBox(width: 10,),
+                            SkillWidget(skillName: 'Youtube',
+                            image: 'assets/youtube.png',
+                            )
+        ],
+      ),
+      SizedBox(height: 20,),
+      Row(
+        children: [
+       //   SizedBox(width: MediaQuery.of(context).size.width/20,),
+  SkillWidget(skillName: 'Traveling',
+                            image: 'assets/traveling.png',
+                            ),
+                             SizedBox(width: 10,)
+                            ,
+                            SkillWidget(skillName: 'Money',
+                            image: 'assets/money.png',
+                            )
+        ],
+      )
+      
+        ],
+      )
+    
+    ,
+   Row(
+    children: [
+       Container(
+      height: MediaQuery.of(context).size.width/8,
+      width: MediaQuery.of(context).size.width/8,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(width: 1,color: ColorConstant.yellowColor),
-        image: DecorationImage(image: AssetImage('assets/user_about.JPG'))
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.white30
+      ),
+
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text("4.3+",
+          style: TextStyle(
+            color: ColorConstant.yellowColor,
+            fontWeight: FontWeight.w800,
+            fontSize: 50
+          ),
+          ),
+          //SizedBox(height: 0,),
+          Text("Years\nExperience",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+            
+            fontWeight: FontWeight.w600,
+            fontSize: 25
+          ),
+          ),
+
+        ],
       ),
     ),
-  ],
+    SizedBox(width: MediaQuery.of(context).size.width/20,),
+     Container(
+      height: MediaQuery.of(context).size.width/8,
+      width: MediaQuery.of(context).size.width/8,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.white30
+      ),
+       alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(" 30+",
+          style: TextStyle(
+            color: ColorConstant.yellowColor,
+            fontWeight: FontWeight.w800,
+            fontSize: 50
+          ),
+          ),
+          //SizedBox(height: 0,),
+          Text("Projects\nCompleted",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white,
+            
+            fontWeight: FontWeight.w600,
+            fontSize: 25
+          ),
+          ),
+
+        ],
+      ),
+    )
+    ],
+   )
+    
+    
+    
+    ],
+  ),
 )
+,SizedBox(height: 40,),
 
 
+Padding(
+ padding:  EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20,),
+  child:   Container(
+    width: MediaQuery.of(context).size.width/1,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.white12
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Text(
+      "Chandan Pradhan is an accomplished IT professional with a strong background in software development and project management. With a proven track record of delivering high-quality software solutions, Chandan brings over five years of experience in the tech industry. He has a deep understanding of various programming languages and frameworks, which allows him to effectively tackle complex technical challenges.\nCurrently serving as a Software Engineer at Tata Consultancy Services, Chandan has been instrumental in leading multiple projects from conception to completion. His expertise in Java, Spring Boot, and Microservices has enabled him to design and implement robust, scalable applications that meet client requirements and industry standards.\nChandan's educational background includes a Bachelor's degree in Computer Science and Engineering from the Gandhi Institute for Technological Advancement. His academic achievements laid a solid foundation for his professional career, providing him with the essential skills and knowledge to excel in the fast-paced world of software development.\nThroughout his career, Chandan has demonstrated a commitment to continuous learning and professional growth. He is well-versed in Agile methodologies and has successfully managed cross-functional teams, ensuring timely delivery of projects within budget constraints. His ability to communicate effectively with both technical and non-technical stakeholders has been a key factor in his success.\nChandan's passion for technology extends beyond his professional life. He actively participates in coding competitions and hackathons, constantly honing his skills and staying updated with the latest industry trends. His dedication to innovation and excellence makes him a valuable asset to any organization.\nIn addition to his technical prowess, Chandan is known for his strong analytical and problem-solving abilities. He has a knack for identifying inefficiencies and implementing solutions that enhance operational efficiency. His proactive approach and attention to detail ensure that he consistently delivers exceptional results.\nChandan is also a collaborative team player, always willing to lend a hand to his colleagues and share his knowledge. He believes in fostering a positive and productive work environment where everyone can thrive and achieve their best.\nAs he continues to advance in his career, Chandan is focused on leveraging his skills and experience to drive impactful projects and contribute to the growth and success of his organization. His vision for the future includes exploring new technologies and methodologies that can further enhance the capabilities of the software solutions he develops.\nWith a blend of technical expertise, leadership skills, and a passion for innovation, Chandan Pradhan is well-positioned to make significant contributions to the tech industry and achieve his professional goals.",
+      
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w300,
+          color: Colors.white
+        ),
+      ),
+    ),
+  ),
+),
+SizedBox(height: 40,),
+Container(
+  height: 40,
+  width: 200,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(30),
+    border: Border.all(width: 1,color: ColorConstant.yellowColor)
+  ),
+  alignment: Alignment.center,
+  child: Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20),
+    child: Row(
+      children: [
+        Icon(Icons.file_download_outlined,color: ColorConstant.yellowColor,size:30,),
+        SizedBox(width: 10,),
+        Text("Contact Me",style: TextStyle(
+          color: ColorConstant.yellowColor,
+          fontSize: 18,
+          fontWeight: FontWeight.bold
+        ),),
+      ],
+    ),
+  ),
+),
+SizedBox(height: 50,),
+Container(
+  height: 0.2,
+  color: Colors.yellow[100],
+),
+SizedBox(height: 40,),
+
+
+Text("Education",
+style: TextStyle(
+  color: ColorConstant.yellowColor,
+  fontSize: 35,
+  fontWeight: FontWeight.w800
+),
+),
+SizedBox(height: 40,),
+Padding(
+  padding:  EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+  child:   Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      EducationCard(
+        course: '10th',
+        context: context,
+        title: "High School Class 1st - 10th",
+        collegeName: "Dhakaich High School",
+        location: "Badka Dhakaich, Buxar",
+        years: "2015 - 2016"
+      ),
+     
+      EducationCard(
+        course: '12th',
+        context: context,
+        title: "Intermidiate(I.S.C)",
+        collegeName: "V.K.S University",
+        location: "Dumraon 802119, Buxar",
+        years: "2016 - 2018"
+      ),
+      EducationCard(
+        course: 'B.C.A',
+        context: context,
+        title: "Bachellor of Computer Application",
+        collegeName: "V.K.S University",
+        location: "Dumraon 802119, Buxar",
+        years: "2018 - 2021"
+      ),
+    ],
+  ),
+),
+SizedBox(height: 40,),
+
+
+Text("Exeperience",
+style: TextStyle(
+  color: ColorConstant.yellowColor,
+  fontSize: 35,
+  fontWeight: FontWeight.w800
+),
+),
+SizedBox(height: 40,),
               ],
             ),
           ),

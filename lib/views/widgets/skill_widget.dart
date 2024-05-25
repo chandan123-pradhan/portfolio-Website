@@ -22,29 +22,32 @@ class _SkillWidgetState extends State<SkillWidget> {
   Widget build(BuildContext context) {
     return Container(
                             height: 40,
-                            width: 140,
+                          //  width: 140,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
                                     width: 1, color: ColorConstant.yellowColor),
                                 color: Colors.white),
                             alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-Image.asset(widget.image,
-height: 30,
-width: 40,
-),
-
-                                Text(
-                                  widget.skillName,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ],
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                            Image.asset(widget.image,
+                            height: 30,
+                            width: 40,
+                            ),
+                            
+                                  Text(
+                                    widget.skillName,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
                             ),
                           );
   }
