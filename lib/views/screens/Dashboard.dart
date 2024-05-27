@@ -1,8 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/color_constant.dart';
+import 'package:my_portfolio/constants/const_string.dart';
+import 'package:my_portfolio/controllers/helper_methods.dart';
+import 'package:my_portfolio/models/experience_model.dart';
+import 'package:my_portfolio/views/screens/hire_me_form.dart';
 import 'package:my_portfolio/views/widgets/education_card.dart';
+import 'package:my_portfolio/views/widgets/experience_card.dart';
 import 'package:my_portfolio/views/widgets/skill_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DashboardWidget extends StatefulWidget {
   const DashboardWidget({super.key});
@@ -12,10 +18,75 @@ class DashboardWidget extends StatefulWidget {
 }
 
 class _DashboardWidgetState extends State<DashboardWidget> {
+
+
+List<ExperienceModel> experiences=[];
+
+List<String>companies=[
+  'SMC Global Securities Ltd',
+  'Alpha Lion Logistics',
+  'Capermint Technologies Pvt Ltd',
+  'Qthrust Software Solution Pvt Ltd'
+];
+List<String>companiesLogo=[
+  'assets/smc_logo.jpeg',
+  'assets/alpha_lion.jpeg',
+  'assets/capermint.png',
+  'assets/qthrust_logo.jpeg',
+];
+List<String>jobTitles=[
+  'SDE-II (Software Development Engineer II)',
+  'SDE-II (Software Development Engineer II)',
+  'SDE-I (Software Development Engineer I)',
+  'SDE-I (Software Development Engineer I)'
+];
+List<String>dates=[
+  'June 2023-Present',
+  'Nov 2022-May 2023',
+  'May 2021-Aug 2022',
+  'Aug 2020-Apr 2021'
+];
+
+List<String>locations=[
+  ' New Delhi, Pusha Road 90001',
+  ' Noida Sector 62, 201301',
+  ' Iskcon Crossroad, Ahemdabad, Gujarat 380015',
+  ' Gaziyabad, Uttar Pradesh 110093'
+];
+
+getExeperience(){
+  for(int i=0;i<companies.length;i++){
+    ExperienceModel experienceModel=ExperienceModel(jobTitle: jobTitles[i], 
+    companyName: companies[i],
+    fromDate: dates[i].split('-').first,
+    toDate:dates[i].split('-').last, 
+    rolesAndResponsibilities: 
+    [
+      'Develop and enhance a top-tier trading application for Android and iOS platforms using Flutter & Native Frameworks.',
+      'Design and implement efficient, scalable, and robust solutions for new features, ensuring optimal performance.',
+      'Collaborate with cross-functional teams to align on project goals and deliver high-quality software.',
+      'Conduct code reviews to maintain high standards of code quality and best practices.',
+      "Troubleshoot and resolve complex technical issues to improve the application's reliability and functionality."
+    ],
+    location: locations[i],
+    companyLogo: companiesLogo[i]
+    );
+    experiences.add(experienceModel);
+  }
+}
+
+
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getExeperience();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blueGrey[900],
         body: Container(
           child: SingleChildScrollView(
             child: Column(
@@ -228,56 +299,74 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 40,
-                      width: 140,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                            width: 1, color: ColorConstant.yellowColor),
-                        //color: Colors.grey[100]
-                      ),
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Resume ",
-                            style: TextStyle(
-                                color: ColorConstant.yellowColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
+                   MouseRegion(
+  cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+                        onTap: ()async{
+                        
+HelperMethods.LaunchUrl(StringConst.myResumeUrl);
+
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 140,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                width: 1, color: ColorConstant.yellowColor),
+                            //color: Colors.grey[100]
                           ),
-                          Icon(
-                            Icons.file_download_outlined,
-                            color: ColorConstant.yellowColor,
-                          )
-                        ],
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Resume ",
+                                style: TextStyle(
+                                    color: ColorConstant.yellowColor,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Icon(
+                                Icons.file_download_outlined,
+                                color: ColorConstant.yellowColor,
+                              )
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      height: 40,
-                      width: 140,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                              width: 1, color: ColorConstant.yellowColor),
-                          color: ColorConstant.yellowColor),
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Hire Me",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
+                    MouseRegion(
+  cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+                        onTap: (){
+                          _showAlertBox(context);
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 140,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                  width: 1, color: ColorConstant.yellowColor),
+                              color: ColorConstant.yellowColor),
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Hire Me",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ],
@@ -298,6 +387,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           left: 75,
                           child: SkillWidget(skillName: 'Flutter',
                           image: 'assets/flutter_icon.png',
+                            onTap: (){},
                           )
                         ),
 
@@ -309,6 +399,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           left: 25,
                           child:  SkillWidget(skillName: 'Swift',
                           image: 'assets/swift_icon.png',
+                          onTap: (){},
                           ))
 
 ,
@@ -319,6 +410,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           child: 
                            SkillWidget(skillName: 'Kotlin',
                           image: 'assets/kotlin_icon.png',
+                            onTap: (){},
                           ))
 ,
 
@@ -333,6 +425,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           
                            SkillWidget(skillName: 'Golang',
                           image: 'assets/golang_icon.png',
+                            onTap: (){},
                           )
                           ),
 
@@ -346,6 +439,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           
                       SkillWidget(skillName: 'SQL',
                           image: 'assets/sql_icon.png',
+                            onTap: (){},
                           )
                      
                         )
@@ -359,6 +453,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                           
                            SkillWidget(skillName: 'Python',
                           image: 'assets/python_icon.png',
+                            onTap: (){},
                           )
                           ),
    
@@ -422,11 +517,16 @@ Padding(
          // SizedBox(width: MediaQuery.of(context).size.width/20,),
   SkillWidget(skillName: 'Listeing Music',
                             image: 'assets/headphones.png',
+                            onTap: (){
+                              
+                              HelperMethods.LaunchUrl(StringConst.myYoutubeUrl);
+                            },
                             )
                             ,
                              SizedBox(width: 10,),
                             SkillWidget(skillName: 'Youtube',
                             image: 'assets/youtube.png',
+                            onTap: (){},
                             )
         ],
       ),
@@ -436,11 +536,13 @@ Padding(
        //   SizedBox(width: MediaQuery.of(context).size.width/20,),
   SkillWidget(skillName: 'Traveling',
                             image: 'assets/traveling.png',
+                              onTap: (){},
                             ),
                              SizedBox(width: 10,)
                             ,
                             SkillWidget(skillName: 'Money',
                             image: 'assets/money.png',
+                              onTap: (){},
                             )
         ],
       )
@@ -634,9 +736,64 @@ style: TextStyle(
 ),
 ),
 SizedBox(height: 40,),
-              ],
+
+
+
+
+for(int i=0;i<experiences.length;i++)
+Column(
+  children: [
+        MouseRegion(
+  cursor: SystemMouseCursors.click,
+    child: GestureDetector(
+                        onTap: (){
+                          String url='';
+                          switch(i){
+                            case 0:
+                              url=StringConst.smcUrl;
+                              break;
+                            case 1:  
+                              url=StringConst.alphalionUrl;
+                              break;
+                            case 2:
+                              url=StringConst.capermintUrl;
+                              break;
+                            case 3:
+                              url=StringConst.qthrustLink;    
+                          }
+                          HelperMethods.LaunchUrl(url);
+                        },
+                        child: experienceCard(context: context,
+              experienceModel: experiences[i]
+              ),
+          ),
+        ),
+    SizedBox(height: 30,)
+  ],
+)
+
+
+             ],
             ),
           ),
         ));
   }
+
+
+
+
+ void _showAlertBox(BuildContext context) {
+    final _mobileController = TextEditingController();
+    final _emailController = TextEditingController();
+    final _messageController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder:(BuildContext context) {
+        return HireMeForm();
+      }
+    );
+ }
+
+
 }
