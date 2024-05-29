@@ -2,9 +2,9 @@
     "name": "your-flutter-project",
     "version": "1.0.0",
     "scripts": {
-      "deploy": "gh-pages -d build/web"
+        "deploy": "gh-pages -d build/web"
     },
     "devDependencies": {
-      "gh-pages": "^3.2.3"
+        "gh-pages": "^3.2.3"
     }
-  }
+}
