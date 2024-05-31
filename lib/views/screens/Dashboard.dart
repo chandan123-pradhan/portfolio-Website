@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/color_constant.dart';
@@ -75,11 +77,19 @@ getExeperience(){
   }
 }
 
+String mainImageUrl='';
+
+getImage()async{
+  var ImageName=await HelperMethods().getImageUrl(StringConst.mainImageName);
+  print("Image Url=$ImageName");
+}
+
 
 @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    getImage();
     getExeperience();
   }
 
