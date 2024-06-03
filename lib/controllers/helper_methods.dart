@@ -17,11 +17,13 @@ Future<String> getImageUrl(String imageName) async {
     final url = await reference.getDownloadURL();
     return url;
   } catch (error) {
+    print("Erorr");
     // Handle errors (e.g., file not found, permission issues)
     print(error.toString());
     return ""; // Or throw an exception if you prefer
   }
 }
+
 
 
 

@@ -3,17 +3,13 @@ import 'package:my_portfolio/constants/color_constant.dart';
 import 'package:my_portfolio/controllers/helper_methods.dart';
 
 
-class HireMeForm extends StatefulWidget {
+class SuccessPopup extends StatefulWidget {
  
   @override
-  State<HireMeForm> createState() => _HireMeFormState();
+  State<SuccessPopup> createState() => _SuccessPopupState();
 }
 
-class _HireMeFormState extends State<HireMeForm> {
-  final _mobileController = TextEditingController();
-    final _emailController = TextEditingController();
-    final _messageController = TextEditingController();
-
+class _SuccessPopupState extends State<SuccessPopup> {
 
 void submit(){
   Navigator.pop(context);
@@ -29,7 +25,7 @@ void submit(){
           ),
           title: Center(
             child: Text(
-              'You Are Hiring an Expert',
+              'Message Sent Successfully Done!',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -41,40 +37,14 @@ void submit(){
             width: MediaQuery.of(context).size.width * 0.5, // 50% of screen width
             child: SingleChildScrollView(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextField(
-                    controller: _mobileController,
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      labelText: 'Mobile Number',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  TextField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email ID',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  TextField(
-                    controller: _messageController,
-                    maxLines: 4,
-                    decoration: InputDecoration(
-                      labelText: 'Message',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                ],
+                  SizedBox(height: 70,),
+                  Image.asset('assets/check.png',
+                  fit: BoxFit.fill,
+                  height: 250,
+                  )
+                 ],
               ),
             ),
           ),
@@ -94,7 +64,7 @@ void submit(){
               
                   ),
                   alignment: Alignment.center,
-                  child: Text("Submit",
+                  child: Text("Ok",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,fontWeight: FontWeight.w600

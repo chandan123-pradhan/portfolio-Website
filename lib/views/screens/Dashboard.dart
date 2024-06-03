@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/color_constant.dart';
@@ -7,6 +5,7 @@ import 'package:my_portfolio/constants/const_string.dart';
 import 'package:my_portfolio/controllers/helper_methods.dart';
 import 'package:my_portfolio/models/experience_model.dart';
 import 'package:my_portfolio/views/screens/hire_me_form.dart';
+import 'package:my_portfolio/views/screens/success_popup.dart';
 import 'package:my_portfolio/views/widgets/education_card.dart';
 import 'package:my_portfolio/views/widgets/experience_card.dart';
 import 'package:my_portfolio/views/widgets/skill_widget.dart';
@@ -77,20 +76,21 @@ getExeperience(){
   }
 }
 
-String mainImageUrl='';
+// String mainImageUrl='';
 
-getImage()async{
-  var ImageName=await HelperMethods().getImageUrl(StringConst.mainImageName);
-  print("Image Url=$ImageName");
-}
+// getImage()async{
+//   var ImageName=await HelperMethods().getImageUrl(StringConst.mainImageName);
+//   print("Image Url=$ImageName");
+// }
 
 
 @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getImage();
+   
     getExeperience();
+    //  getImage();
   }
 
   @override
@@ -156,21 +156,7 @@ getImage()async{
                         ),
                         Row(
                           children: [
-                            Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.black),
-                                alignment: Alignment.center,
-                                child: Image.asset(
-                                  'assets/sun.png',
-                                  height: 20,
-                                  width: 20,
-                                )),
-                            SizedBox(
-                              width: 10,
-                            ),
+
                             Container(
                               height: 40,
                               width: MediaQuery.of(context).size.width / 10,
@@ -389,7 +375,7 @@ HelperMethods.LaunchUrl(StringConst.myResumeUrl);
                       alignment: Alignment.center,
                       children: [
                         Image.asset(
-                          'assets/user_image.png',
+                          'assets/main_image.png',
                           height: MediaQuery.of(context).size.height / 2,
                         ),
                         Positioned(
@@ -802,7 +788,16 @@ Column(
       builder:(BuildContext context) {
         return HireMeForm();
       }
-    );
+    ).then((value) {
+      showDialog(
+      context: context,
+      builder:(BuildContext context) {
+        return SuccessPopup();
+      }
+    ).then((value) {
+      
+    });
+    });
  }
 
 
