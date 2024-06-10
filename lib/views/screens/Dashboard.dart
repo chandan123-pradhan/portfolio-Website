@@ -8,7 +8,9 @@ import 'package:my_portfolio/views/screens/hire_me_form.dart';
 import 'package:my_portfolio/views/screens/success_popup.dart';
 import 'package:my_portfolio/views/widgets/education_card.dart';
 import 'package:my_portfolio/views/widgets/experience_card.dart';
+import 'package:my_portfolio/views/widgets/projects_card.dart';
 import 'package:my_portfolio/views/widgets/skill_widget.dart';
+import 'package:my_portfolio/views/widgets/social_media_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DashboardWidget extends StatefulWidget {
@@ -24,35 +26,25 @@ class _DashboardWidgetState extends State<DashboardWidget> {
 List<ExperienceModel> experiences=[];
 
 List<String>companies=[
-  'SMC Global Securities Ltd',
-  'Alpha Lion Logistics',
-  'Capermint Technologies Pvt Ltd',
-  'Qthrust Software Solution Pvt Ltd'
+  'ABC Ltd',
+  
+  
 ];
 List<String>companiesLogo=[
-  'assets/smc_logo.jpeg',
-  'assets/alpha_lion.jpeg',
-  'assets/capermint.png',
-  'assets/qthrust_logo.jpeg',
+  'assets/company_logo.png',
+  
 ];
 List<String>jobTitles=[
-  'SDE-II (Software Development Engineer II)',
-  'SDE-II (Software Development Engineer II)',
-  'SDE-I (Software Development Engineer I)',
-  'SDE-I (Software Development Engineer I)'
+  'SDE (Software Development Engineer)',
+  
 ];
 List<String>dates=[
-  'June 2023-Present',
-  'Nov 2022-May 2023',
-  'May 2021-Aug 2022',
-  'Aug 2020-Apr 2021'
+  'June 2021-Present',
+  
 ];
 
 List<String>locations=[
   ' New Delhi, Pusha Road 90001',
-  ' Noida Sector 62, 201301',
-  ' Iskcon Crossroad, Ahemdabad, Gujarat 380015',
-  ' Gaziyabad, Uttar Pradesh 110093'
 ];
 
 getExeperience(){
@@ -101,109 +93,110 @@ getExeperience(){
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle, color: Colors.black),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "𝕮",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  //fontWeight: FontWeight.bold
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              "Chandan",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w300),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Pradhan",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w800),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
+                SizedBox(height: 20,),
+                // Padding(
+                //   padding: const EdgeInsets.all(30.0),
+                //   child: Container(
+                //     height: 50,
+                //     decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       borderRadius: BorderRadius.circular(40),
+                //     ),
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Row(
+                //           children: [
+                //             SizedBox(
+                //               width: 10,
+                //             ),
+                //             Container(
+                //               height: 40,
+                //               width: 40,
+                //               decoration: BoxDecoration(
+                //                   shape: BoxShape.circle, color: Colors.black),
+                //               alignment: Alignment.center,
+                //               child: Text(
+                //                 "𝕮",
+                //                 style: TextStyle(
+                //                   color: Colors.white,
+                //                   fontSize: 20,
+                //                   //fontWeight: FontWeight.bold
+                //                 ),
+                //               ),
+                //             ),
+                //             SizedBox(
+                //               width: 20,
+                //             ),
+                //             Text(
+                //               "Chandan",
+                //               style: TextStyle(
+                //                   color: Colors.black,
+                //                   fontSize: 20,
+                //                   fontWeight: FontWeight.w300),
+                //             ),
+                //             SizedBox(
+                //               width: 5,
+                //             ),
+                //             Text(
+                //               "Pradhan",
+                //               style: TextStyle(
+                //                   color: Colors.black,
+                //                   fontSize: 20,
+                //                   fontWeight: FontWeight.w800),
+                //             ),
+                //           ],
+                //         ),
+                //         Row(
+                //           children: [
 
-                            Container(
-                              height: 40,
-                              width: MediaQuery.of(context).size.width / 10,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.black),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "𝕸𝖊𝖓𝖚",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: ColorConstant.yellowColor),
-                                      alignment: Alignment.center,
-                                      child: Icon(
-                                        Icons.menu,
-                                        size: 25,
-                                        color: Colors.black,
-                                      )),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                //             Container(
+                //               height: 40,
+                //               width: MediaQuery.of(context).size.width / 10,
+                //               decoration: BoxDecoration(
+                //                   borderRadius: BorderRadius.circular(20),
+                //                   color: Colors.black),
+                //               child: Row(
+                //                 mainAxisAlignment:
+                //                     MainAxisAlignment.spaceBetween,
+                //                 children: [
+                //                   SizedBox(
+                //                     width: 10,
+                //                   ),
+                //                   Text(
+                //                     "𝕸𝖊𝖓𝖚",
+                //                     style: TextStyle(
+                //                         color: Colors.white,
+                //                         fontSize: 18,
+                //                         fontWeight: FontWeight.w500),
+                //                   ),
+                //                   SizedBox(
+                //                     width: 20,
+                //                   ),
+                //                   Container(
+                //                       height: 40,
+                //                       width: 40,
+                //                       decoration: BoxDecoration(
+                //                           shape: BoxShape.circle,
+                //                           color: ColorConstant.yellowColor),
+                //                       alignment: Alignment.center,
+                //                       child: Icon(
+                //                         Icons.menu,
+                //                         size: 25,
+                //                         color: Colors.black,
+                //                       )),
+                //                 ],
+                //               ),
+                //             ),
+                //             const SizedBox(
+                //               width: 10,
+                //             ),
+                //           ],
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -238,7 +231,7 @@ getExeperience(){
                   height: 20,
                 ),
                 const Text(
-                  "A Software Engineer | Full Stack Mobile Application Developer",
+                  "Software Engineer | Full Stack Mobile Application Developer",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -270,7 +263,7 @@ getExeperience(){
                           color: Colors.grey[100]),
                       alignment: Alignment.center,
                       child: Text(
-                        "4.3 Years",
+                        "3 Years",
                         style: TextStyle(
                             color: ColorConstant.yellowColor,
                             fontSize: 16,
@@ -561,7 +554,7 @@ Padding(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
-          Text("4.3+",
+          Text("3+",
           style: TextStyle(
             color: ColorConstant.yellowColor,
             fontWeight: FontWeight.w800,
@@ -721,10 +714,13 @@ Padding(
     ],
   ),
 ),
+SizedBox(height: 50,),
+Container(
+  height: 0.2,
+  color: Colors.yellow[100],
+),
 SizedBox(height: 40,),
-
-
-Text("Exeperience",
+Text("Experience",
 style: TextStyle(
   color: ColorConstant.yellowColor,
   fontSize: 35,
@@ -764,7 +760,251 @@ Column(
               ),
           ),
         ),
-    SizedBox(height: 30,)
+    SizedBox(height: 50,),
+Container(
+  height: 0.2,
+  color: Colors.yellow[100],
+),
+SizedBox(height: 40,),
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+        Text("Projects",
+    style: TextStyle(
+      color: ColorConstant.yellowColor,
+      fontSize: 35,
+      fontWeight: FontWeight.w800
+    ),
+    ),
+    SizedBox(width: 20,),
+    Image.asset('assets/computer.png',
+    height: 60,
+    width: 60,
+    )
+  ],
+),
+SizedBox(height: 40,),
+Padding(
+  padding:  EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width/20),
+  child:   Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      ProjectCard(
+       project_name: 'Jogo Quiz',
+        context: context,
+        description: 'This is a Live Streaming Quiz Game Application For Android & iOS.'
+      ),
+     
+      ProjectCard(
+       project_name: 'Kharidoo',
+        context: context,
+        description: 'This is an ECommerce Application like Udan. For Android & iOS.'
+      ),
+     ProjectCard(
+       project_name: 'MyFancy11',
+        context: context,
+        description: 'This is a Cricket Fanctacy app just like Dream11 For Android & iOS.'
+      ),
+     
+    ],
+  ),
+),
+    SizedBox(height: 50,),
+Container(
+  height: 0.2,
+  color: Colors.yellow[100],
+),
+// SizedBox(height: 40,),
+
+
+Row(
+  children: [
+    Container(
+      width: MediaQuery.of(context).size.width/2,
+      height: 205,
+      child: 
+      Column(children: [
+        SizedBox(height: 20,),
+        Text("Connect with me",
+        style: TextStyle(
+          color: ColorConstant.yellowColor,
+          fontSize: 25,
+          fontWeight: FontWeight.w800
+        ),
+        ),
+
+SizedBox(height: 40,),
+
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 60),
+  child:   Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      InkWell(
+        onTap: (){
+          HelperMethods.LaunchUrl(StringConst.linkedInLink);
+        },
+        child: socialMediaCard(
+          context: context,
+          username: 'LinkedIn',
+          icon: 'assets/linkedin.png',
+          color: Colors.blue
+        ),
+      ),
+       InkWell(
+        onTap: (){
+          HelperMethods.LaunchUrl(StringConst.myYoutubeUrl);
+        },
+        child: socialMediaCard(
+          context: context,
+          username: 'Youtube',
+          icon: 'assets/youtube.png',
+          color: Colors.red
+        ),
+      ),
+       InkWell(
+        onTap: (){
+          HelperMethods.LaunchUrl(StringConst.githubLink);
+        },
+        child: socialMediaCard(
+          context: context,
+          username: 'Github',
+          icon: 'assets/github.png',
+          color: Colors.black
+        ),
+      ),
+  
+    ],
+  ),
+  
+),
+SizedBox(height: 40,),
+Padding(
+  padding: const EdgeInsets.only(left: 65),
+  child:   Row(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      Text("Buy me a cofee?",
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.w500
+      ),
+      ),
+      SizedBox(width: 5,),
+      Image.asset('assets/coffee-cup.png',
+      height: 20,width: 20,
+      ),
+       SizedBox(width: 10 ,),
+      Text("Click Here",
+      style: TextStyle(
+        color: ColorConstant.yellowColor,
+        fontSize: 18,
+        fontWeight: FontWeight.w800,
+        decoration: TextDecoration.underline
+      ),
+      ),
+         SizedBox(width: 10 ,),
+    ],
+  ),
+)
+
+
+      ],)
+      ),
+    Container(
+  height: 200,
+  color: Colors.yellow[100],
+  width: 0.2,
+),
+     Container(
+      width: MediaQuery.of(context).size.width/2.01,
+      height: 200,
+      child:   const Column(children:[
+        SizedBox(height: 20,),
+        Text("Contact Details",
+        style: TextStyle(
+          color: ColorConstant.yellowColor,
+          fontSize: 25,
+          fontWeight: FontWeight.w800
+        ),
+        ),
+SizedBox(height: 20,),
+Row(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+    Padding(
+      padding: EdgeInsets.symmetric(horizontal:20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text("Email: ",
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500
+              ),
+              ),
+              SizedBox(width: 10,),
+              Text("Chandanpradhanbxr@gmail.com",
+              
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w800
+              ),
+              )
+            ],
+          ),
+      
+      SizedBox(height: 20,),
+          Row(
+            children: [
+              Text("Mobile No.: ",
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500
+              ),
+              ),
+              SizedBox(width: 10,),
+              Text("XXXXXX4832",
+              
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w800
+              ),
+              )
+            ],
+          ),
+       SizedBox(height: 20,),
+          Row(
+            children: [
+              Text("Address: ",
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500
+              ),
+              ),
+              SizedBox(width: 10,),
+              Text("Noida sector 62, 202103",
+              
+              style: TextStyle(
+                color: Colors.white,fontSize: 16,fontWeight: FontWeight.w800
+              ),
+              )
+            ],
+          ),
+      
+        ],
+      ),
+    )
+  ],
+)
+
+      ],)
+   ,
+    )
+  ],
+)
+
+
+
   ],
 )
 

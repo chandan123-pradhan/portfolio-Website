@@ -37,6 +37,7 @@ borderRadius: BorderRadius.circular(40),
                 height: 45,
                 width: 45,
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   shape: BoxShape.circle,
                  // color: Colors.white
                  image: DecorationImage(image: 
