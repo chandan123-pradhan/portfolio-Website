@@ -35,13 +35,16 @@ Widget ProjectCard(
                     ),
                     ),
                     SizedBox(height: 10,),
-                      Text(description,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500
-                    ),
-                    ),
+                      Container(
+                        height: 50,
+                        child: Text(description,
+                                            style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500
+                                            ),
+                                            ),
+                      ),
                      SizedBox(height: 5,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
