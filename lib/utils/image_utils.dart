@@ -1,0 +1,31 @@
+class ImageUtils{
+  static const String splash_page_bg='assets/splash_page_bg.png';
+  static const String splash_dog_img='assets/splash_dog_img.png';
+  static const String next_icon='assets/next_icon.png';
+  static const String rectangle_card='assets/Rectangle_card.png';
+  static const String bottomBar='assets/bottom_bar.png';
+  static const String refferalTabIcon='assets/refferal_tab_icon.png';
+  static const String taskTabIcon='assets/task_tab_icon.png';
+  static const String boosTabIcon='assets/boost_tab_icon.png';
+  static const String statsTabIcon='assets/stats_tab_icon.png';
+  static const String empty_box='assets/empty_box.png';
+  static const String coin_icon='assets/coin_icon.png';
+  static const String task_tag_icon='assets/task_tag_img.png';
+  static const String telegram_icon='assets/telegram.png';
+  static const String instagram_icon='assets/instagram.png';
+  static const String Vector_icon='assets/Vector.png';
+  static const String battery_icon='assets/battery_icon.png';
+  static const String hand_icon='assets/hand_icon.png';
+  static const String speed_icon='assets/speed_icon.png';
+  static const String energy_icon='assets/energy_icon.png';
+  static const String pump_icon='assets/pump_icon.png';
+  static const String battery_Add_icon='assets/battery_add_icon.png';
+  static const String tap_coin='assets/tap_coin.png';
+  static const String boostWidget='assets/boost.png';
+  static const String energy='assets/energy.png';
+  static const String coin_svg='assets/coin_svg.svg';
+  static const String more_botton='assets/more_botton.png';
+  static const String battery='assets/battery.png';
+  static const String tap='assets/tap.png';
+  static const String get_it_botton='assets/get_it_botton.png';
+}
